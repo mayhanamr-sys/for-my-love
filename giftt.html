@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Surprise 🎂</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #800020; /* اللون النبيتي */
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Container مركزي */
+.container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* النص الرئيسي */
+h1 {
+    font-size: 36px;
+    margin: 30px 0;
+    text-shadow: 2px 2px 8px #000;
+}
+
+/* أزرار Yes / No */
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#yesBtn { background-color: #ff4b87; color: white; }
+#noBtn { background-color: #555; color: white; }
+
+/* التورتة: كل طبقة div */
+.cake-layer {
+    width: 200px;
+    height: 50px;
+    margin: 0 auto 5px auto;
+    background-color: #ffb6c1;
+    border-radius: 15px;
+    position: relative;
+}
+
+/* الشموع */
+.candle {
+    position: absolute;
+    width: 10px;
+    height: 40px;
+    background-color: yellow;
+    top: -40px;
+    border-radius: 3px;
+    animation: flicker 0.2s infinite alternate;
+}
+
+.candle:nth-child(1) { left: 30px; animation-delay: 0s; }
+.candle:nth-child(2) { left: 85px; animation-delay: 0.1s; }
+.candle:nth-child(3) { left: 140px; animation-delay: 0.2s; }
+
+@keyframes flicker {
+    0% { transform: scaleY(1); opacity: 1; }
+    50% { transform: scaleY(1.2); opacity: 0.8; }
+    100% { transform: scaleY(1); opacity: 1; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- التورتة -->
+    <div class="cake-layer">
+        <div class="candle"></div>
+        <div class="candle"></div>
+        <div class="candle"></div>
+    </div>
+    <div class="cake-layer"></div>
+    <div class="cake-layer"></div>
+
+    <!-- النص بعد التورتة -->
+    <h1>Do you want to see your birthday gift?</h1>
+
+    <!-- الأزرار -->
+    <button id="yesBtn" onclick="goToGift()">Yes</button>
+    <button id="noBtn" onclick="noAction()">No</button>
+
+</div>
+
+<script>
+function goToGift() {
+    window.location.href = "gift.html"; // الصفحة الثانية
+}
+function noAction() {
+    alert("Okay! Maybe later 🎉");
+}
+</script>
+
+</body>
+</html>
